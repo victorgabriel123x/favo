@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Favo Restaurante e Café · Florianópolis</title>
+<meta name="description" content="Restaurante e café em Florianópolis. Um espaço acolhedor para almoçar, tomar um café ou aproveitar o brunch com calma. R. Des. Pedro Silva, 3078.">
+<meta name="theme-color" content="#2E4034">
+<meta name="author" content="Favo Restaurante e Café">
+<!-- Quando o site tiver um endereço próprio, descomente a linha abaixo e troque
+     pelo domínio real. Faça o mesmo com og:image, usando o caminho completo. -->
+<!-- <link rel="canonical" href="https://SEU-DOMINIO.com.br/"> -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/marca/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/marca/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/marca/favicon-180.png">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Favo Restaurante e Café">
+<meta property="og:title" content="Favo Restaurante e Café · Florianópolis">
+<meta property="og:description" content="Sabores, encontros e momentos para aproveitar sem pressa. Restaurante, café e brunch em Florianópolis.">
+<meta property="og:image" content="assets/marca/og-favo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Favo Restaurante e Café · Florianópolis">
+<meta name="twitter:description" content="Sabores, encontros e momentos para aproveitar sem pressa.">
+<meta name="twitter:image" content="assets/marca/og-favo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Favo Restaurante e Café",
+  "description": "Restaurante e café em Florianópolis, com brunch nos fins de semana.",
+  "image": "assets/marca/og-favo.jpg",
+  "servesCuisine": ["Contemporânea", "Brunch", "Café"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Des. Pedro Silva, 3078",
+    "addressLocality": "Florianópolis",
+    "addressRegion": "SC",
+    "postalCode": "88080-700",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5548984576220",
+  "sameAs": ["https://www.instagram.com/favofloripa/"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "20:00" }
+  ]
+}
+</script>
+
+<style>
+/* ==========================================================================
+   FAVO · folha de estilo
+   Sistema visual: "Alvéolo Sereno"
+   Para trocar textos e fotos, edite apenas assets/dados.js
+   ========================================================================== */
+
+:root{
+  /* cor */
+  --creme:        #F1EADD;   /* combina exatamente com o fundo das fotos */
+  --creme-alto:   #F8F3E9;
+  --papel:        #FFFDF8;
+  --verde:        #2E4034;
+  --verde-fundo:  #26362C;
+  --verde-claro:  #4C6455;
+  --terra:        #B5654D;
+  --terra-escuro: #9A5340;
+  --cafe:         #4A3428;
+  --tinta:        #26302A;
+  --tinta-media:  #5B6459;
+  --linha:        rgba(38,48,42,.14);
+  --linha-clara:  rgba(241,234,221,.18);
+
+  /* tipografia */
+  --display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --texto:   "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* ritmo */
+  --secao:   clamp(5.5rem, 11vh + 3rem, 9.5rem);
+  --gutter:  clamp(1.25rem, 5vw, 4.5rem);
+  --max:     1240px;
+  --cabecalho: 88px;   /* altura do cabeçalho no topo da página */
+  --logo-alt: 46px;    /* altura da logo no cabeçalho */
+
+  --curva: 20px;
+  --curva-g: 28px;
+  --transicao: 420ms cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--creme);
+  color:var(--tinta);
+  font-family:var(--texto);
+  font-size:clamp(15.5px,.42vw + 14.6px,17px);
+  font-weight:400;
+  line-height:1.72;
+  letter-spacing:.002em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+picture{display:block}
+.moldura picture,.bloco__midia picture,.peca picture,.brunch__midia picture{width:100%;height:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4,p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* ---------------------------------------------------------- utilitários */
+.env{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.secao{padding-block:var(--secao);position:relative}
+.vis-oculto{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.pular{
+  position:absolute;left:var(--gutter);top:-100px;z-index:200;
+  background:var(--verde);color:var(--creme);padding:.7rem 1.1rem;border-radius:999px;
+  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  transition:top 200ms ease;
+}
+.pular:focus{top:14px}
+
+:where(a,button,summary,[tabindex]):focus-visible{
+  outline:2px solid var(--terra);outline-offset:3px;border-radius:6px;
+}
+.secao--escura :where(a,button):focus-visible{outline-color:#E2A183}
+
+/* ------------------------------------------------------------ tipografia */
+.etiqueta{
+  font-family:var(--texto);
+  font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--terra);
+  display:flex;align-items:center;gap:.85rem;
+  margin-bottom:1.5rem;
+}
+.etiqueta::before{
+  content:"";width:26px;height:1px;background:currentColor;opacity:.55;flex:none;
+}
+.secao--escura .etiqueta{color:#D89A7E}
+
+.display{
+  font-family:var(--display);
+  font-weight:400;
+  line-height:1.06;
+  letter-spacing:-.014em;
+  color:var(--verde);
+  text-wrap:balance;
+}
+.secao--escura .display{color:var(--creme)}
+/* medida calculada para o título fechar em três linhas na coluna do início */
+.d1{font-size:clamp(2.4rem,4.6vw,3.6rem);line-height:1.04}
+.d2{font-size:clamp(2.05rem,4.2vw,3.35rem)}
+.d3{font-size:clamp(1.45rem,1.7vw,1.85rem);line-height:1.16}
+.italico{font-style:italic;font-weight:300;color:var(--terra)}
+
+.corpo{color:var(--tinta-media);max-width:52ch;font-weight:400}
+.corpo + .corpo{margin-top:1.15rem}
+.secao--escura .corpo{color:rgba(241,234,221,.74)}
+.corpo--grande{font-size:1.075em;line-height:1.68;color:var(--tinta)}
+.secao--escura .corpo--grande{color:rgba(241,234,221,.86)}
+
+/* ---------------------------------------------------------------- botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  padding:.98rem 1.75rem;border-radius:999px;border:1px solid transparent;
+  font-size:.775rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:background var(--transicao),color var(--transicao),border-color var(--transicao),transform var(--transicao),box-shadow var(--transicao);
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn--cheio{background:var(--verde);color:var(--creme-alto)}
+.btn--cheio:hover{background:var(--verde-fundo);transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(38,48,42,.65)}
+.btn--terra{background:var(--terra);color:#FFF8F3}
+.btn--terra:hover{background:var(--terra-escuro);transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(154,83,64,.7)}
+.btn--linha{border-color:rgba(38,48,42,.28);color:var(--verde);background:transparent}
+.btn--linha:hover{border-color:var(--verde);background:rgba(46,64,52,.05);transform:translateY(-2px)}
+.secao--escura .btn--linha{border-color:rgba(241,234,221,.34);color:var(--creme)}
+.secao--escura .btn--linha:hover{border-color:var(--creme);background:rgba(241,234,221,.08)}
+.btn--claro{background:var(--creme);color:var(--verde)}
+.btn--claro:hover{background:#fff;transform:translateY(-2px)}
+.acoes{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.4rem}
+
+/* --------------------------------------------------------------- padrão */
+.favo-fundo{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:url("assets/marca/padrao-favo-tinta.svg");
+  background-size:104px 180px;
+  opacity:.055;
+}
+.secao--escura .favo-fundo,.rodape .favo-fundo{
+  background-image:url("assets/marca/padrao-favo-creme.svg");
+  opacity:.06;
+}
+.favo-fundo--suave{
+  -webkit-mask-image:radial-gradient(120% 85% at 78% 20%,#000 0%,transparent 72%);
+  mask-image:radial-gradient(120% 85% at 78% 20%,#000 0%,transparent 72%);
+}
+.secao > .env,.hero > .env{position:relative;z-index:1}
+
+/* ------------------------------------------------------------- cabeçalho */
+.cabecalho{
+  position:fixed;inset:0 0 auto 0;z-index:90;
+  height:var(--cabecalho);
+  display:flex;align-items:center;
+  transition:background var(--transicao),box-shadow var(--transicao),border-color var(--transicao),height var(--transicao);
+  border-bottom:1px solid transparent;
+}
+.cabecalho.fixo{
+  background:rgba(241,234,221,.86);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  backdrop-filter:saturate(140%) blur(14px);
+  border-bottom-color:var(--linha);
+  height:calc(var(--cabecalho) - 18px);
+}
+.cabecalho .env{display:flex;align-items:center;gap:2rem;justify-content:space-between}
+.marca{display:flex;align-items:center;flex:none;text-decoration:none}
+.marca img{height:var(--logo-alt);width:auto;transition:height var(--transicao)}
+.cabecalho.fixo .marca img{height:calc(var(--logo-alt) - 10px)}
+
+.nav{display:flex;align-items:center;gap:2.05rem;margin-inline:auto}
+.nav a{
+  position:relative;text-decoration:none;color:var(--tinta);
+  font-size:.715rem;font-weight:500;letter-spacing:.155em;text-transform:uppercase;
+  padding-block:.45rem;transition:color var(--transicao);
+}
+.nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:var(--terra);transform:scaleX(0);transform-origin:left;
+  transition:transform var(--transicao);
+}
+.nav a:hover,.nav a[aria-current="true"]{color:var(--verde)}
+.nav a:hover::after,.nav a[aria-current="true"]::after{transform:scaleX(1)}
+.cabecalho .btn{padding:.72rem 1.3rem;font-size:.7rem;flex:none}
+
+.hamburguer{
+  display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;
+  align-items:center;justify-content:center;flex:none;margin-left:auto;
+}
+.hamburguer span{display:block;width:22px;height:1.5px;background:var(--tinta);position:relative;transition:background 200ms}
+.hamburguer span::before,.hamburguer span::after{
+  content:"";position:absolute;left:0;width:22px;height:1.5px;background:var(--tinta);
+  transition:transform var(--transicao),top var(--transicao);
+}
+.hamburguer span::before{top:-6.5px}
+.hamburguer span::after{top:6.5px}
+body.menu-aberto .hamburguer span{background:transparent}
+body.menu-aberto .hamburguer span::before{top:0;transform:rotate(45deg);background:var(--creme)}
+body.menu-aberto .hamburguer span::after{top:0;transform:rotate(-45deg);background:var(--creme)}
+
+.menu-movel{
+  position:fixed;inset:0;z-index:80;background:var(--verde-fundo);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:calc(var(--cabecalho) + 2rem) var(--gutter) 3rem;
+  opacity:0;visibility:hidden;transform:translateY(-8px);
+  transition:opacity 340ms ease,transform 340ms ease,visibility 340ms;
+}
+body.menu-aberto .menu-movel{opacity:1;visibility:visible;transform:none}
+.menu-movel nav{display:flex;flex-direction:column;gap:.35rem}
+.menu-movel nav a{
+  font-family:var(--display);font-size:clamp(1.9rem,8vw,2.6rem);color:var(--creme);
+  text-decoration:none;padding-block:.42rem;border-bottom:1px solid rgba(241,234,221,.1);
+  display:flex;align-items:baseline;gap:1rem;
+}
+.menu-movel nav a span{font-family:var(--texto);font-size:.62rem;letter-spacing:.2em;color:#D89A7E;opacity:.85}
+.menu-movel .btn{margin-top:2.2rem;align-self:flex-start}
+.menu-movel .rodape-menu{margin-top:2.6rem;color:rgba(241,234,221,.55);font-size:.78rem;line-height:1.9}
+.menu-movel .rodape-menu a{color:rgba(241,234,221,.8);text-decoration:none}
+
+/* ------------------------------------------------------------------ hero */
+.hero{
+  position:relative;
+  min-height:min(100svh,900px);
+  display:flex;align-items:center;
+  padding-block:calc(var(--cabecalho) + 3.5rem) 3.5rem;
+  overflow:hidden;
+}
+.hero .env{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:clamp(2rem,4vw,4.5rem);align-items:center}
+.hero__texto{max-width:100%}
+/* logo em destaque acima do título */
+.hero__logo{width:clamp(158px,16.5vw,206px);height:auto;margin-bottom:1.75rem}
+.hero .d1{margin-bottom:1.6rem}
+.hero .corpo{font-size:1.08em}
+
+/* As fotos têm exatamente o mesmo fundo creme da página, por isso flutuam
+   sem moldura. As posições abaixo foram calculadas para que nenhum prato
+   seja encoberto pelo quadrado da outra foto. */
+.hero__mesa{position:relative;aspect-ratio:1/1;width:100%}
+.hero__mesa figure{position:absolute;margin:0}
+.hero__prato-a{width:72%;top:0;right:0;z-index:2}
+.hero__prato-b{width:40%;bottom:0;left:12%;z-index:3}
+.hero__mesa img{width:100%;height:auto}
+/* elipse de anotação, concêntrica ao prato principal, com folga uniforme */
+.hero__aro{
+  position:absolute;left:30.75%;top:12.7%;width:68.9%;height:48.8%;
+  border:1px solid rgba(46,64,52,.2);border-radius:50%;
+  z-index:4;pointer-events:none;
+}
+.hero__aro::before{
+  content:"";position:absolute;left:50%;top:-4px;width:8px;height:9px;
+  transform:translateX(-50%);
+  background:var(--terra);opacity:.9;
+  -webkit-clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+}
+
+.hero__rodape{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  border-top:1px solid var(--linha);
+}
+.hero__rodape .env{
+  display:flex;flex-wrap:wrap;gap:.6rem 2.4rem;align-items:center;
+  padding-block:1.05rem;
+  font-size:.715rem;letter-spacing:.13em;text-transform:uppercase;color:var(--tinta-media);
+}
+.hero__rodape strong{font-weight:500;color:var(--verde)}
+.hero__rodape .sep{opacity:.4}
+
+/* ----------------------------------------------------------------- sobre */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,5vw,5.5rem);align-items:center}
+.duo__midia{position:relative}
+.duo__midia img{border-radius:var(--curva-g);width:100%}
+.duo__nota{
+  position:absolute;right:-6%;bottom:8%;
+  background:var(--verde);color:var(--creme);
+  padding:1.15rem 1.35rem;border-radius:var(--curva);
+  max-width:200px;font-size:.74rem;line-height:1.6;letter-spacing:.02em;
+  box-shadow:0 22px 44px -26px rgba(38,48,42,.75);
+}
+.duo__nota b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:400;letter-spacing:0;margin-bottom:.1rem;color:#fff}
+
+.regra{height:1px;background:var(--linha);border:0;margin:0}
+.marcadores{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.2rem}
+.marcador{
+  border:1px solid var(--linha);border-radius:999px;padding:.42rem 1rem;
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-media);
+}
+
+/* ----------------------------------------------------------- experiência */
+.secao--escura{background:var(--verde-fundo);color:var(--creme);overflow:hidden}
+.cabeca{max-width:min(30rem,100%);margin-bottom:clamp(3rem,5vw,4.5rem)}
+.cabeca .corpo{margin-top:1.15rem}
+
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,3rem)}
+.bloco{display:flex;flex-direction:column}
+.bloco__midia{
+  position:relative;margin-bottom:1.7rem;
+  aspect-ratio:1/1;
+}
+/* o recorte hexagonal fica no contêiner; a foto é reduzida dentro dele para
+   que nenhum prato encoste nas diagonais (folga verificada em todas as fotos) */
+.bloco__midia picture{
+  background:var(--creme);
+  -webkit-clip-path:polygon(50% 0%,93.3% 25%,93.3% 75%,50% 100%,6.7% 75%,6.7% 25%);
+  clip-path:polygon(50% 0%,93.3% 25%,93.3% 75%,50% 100%,6.7% 75%,6.7% 25%);
+}
+.bloco__midia img{
+  width:100%;height:100%;object-fit:contain;
+  transform:scale(.9);
+  transition:transform 700ms cubic-bezier(.22,.61,.36,1);
+}
+.bloco:hover .bloco__midia img{transform:scale(.935)}
+.bloco__numero{
+  font-size:.68rem;letter-spacing:.24em;color:#D89A7E;margin-bottom:.7rem;display:block;
+}
+.bloco h3{margin-bottom:.7rem}
+.bloco .corpo{max-width:38ch;font-size:.955em}
+
+/* ---------------------------------------------------------------- brunch */
+.brunch{background:var(--creme-alto)}
+.brunch .duo{align-items:center}
+.brunch__midia{position:relative}
+/* fundo igual ao das fotos, para a imagem se fundir com o cartão */
+.brunch__midia picture{background:var(--creme);border-radius:var(--curva-g);overflow:hidden}
+.brunch__midia img{width:100%;height:auto}
+.brunch__selo{
+  position:absolute;top:-22px;left:-22px;
+  width:104px;height:104px;border-radius:50%;
+  background:var(--terra);color:#FFF8F3;
+  display:grid;place-items:center;text-align:center;
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;line-height:1.7;
+  box-shadow:0 18px 38px -20px rgba(154,83,64,.8);
+}
+
+/* -------------------------------------------------------------- ambiente */
+.ambiente__topo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:end;margin-bottom:clamp(2.8rem,5vw,4rem)}
+.qualidades{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;border-top:1px solid var(--linha);padding-top:2rem;margin-top:3rem}
+.qualidade h4{font-family:var(--display);font-size:1.28rem;font-weight:500;color:var(--verde);margin-bottom:.35rem}
+.qualidade p{font-size:.9rem;color:var(--tinta-media);line-height:1.66;margin:0}
+
+.ambiente__grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.6rem)}
+.moldura{
+  position:relative;aspect-ratio:4/5;border-radius:var(--curva);overflow:hidden;
+  background:var(--creme-alto);
+}
+.moldura img{width:100%;height:100%;object-fit:cover}
+.moldura--vazia{
+  border:1px solid var(--linha);
+  display:grid;place-items:center;text-align:center;padding:1.5rem;
+  background-color:var(--creme-alto);
+  background-image:url("assets/marca/padrao-favo-tinta.svg");
+  background-size:88px 152px;
+}
+.moldura--vazia::before{
+  content:"";position:absolute;inset:0;background:rgba(248,243,233,.9);
+}
+.moldura--vazia .conteudo{position:relative;z-index:1}
+.moldura--vazia svg{width:34px;height:38px;color:rgba(46,64,52,.26)}
+.moldura--vazia span{
+  font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(46,64,52,.45);
+  display:block;margin-top:.7rem;
+}
+.moldura--vazia .conteudo{display:block}
+.moldura__legenda{
+  position:absolute;left:14px;bottom:12px;
+  font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;
+  text-shadow:0 1px 8px rgba(0,0,0,.55);
+}
+
+/* --------------------------------------------------------------- galeria */
+.galeria{background:var(--creme)}
+.galeria__topo{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:clamp(2.5rem,4vw,3.5rem)}
+.galeria__grade{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:clamp(.7rem,1.4vw,1.25rem);
+}
+.peca{
+  position:relative;margin:0;border:0;padding:0;background:var(--creme);
+  border-radius:var(--curva);overflow:hidden;cursor:zoom-in;display:block;width:100%;
+}
+/* as fotos têm o mesmo fundo da página, então flutuam sem moldura visível */
+.peca img{width:100%;height:100%;object-fit:contain;background:var(--creme);transition:transform 760ms cubic-bezier(.22,.61,.36,1)}
+.peca:hover img,.peca:focus-visible img{transform:scale(1.045)}
+.peca__legenda{
+  position:absolute;left:14px;bottom:14px;
+  padding:.44rem .85rem;border-radius:999px;
+  background:rgba(46,64,52,.94);color:var(--creme);
+  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;text-align:left;line-height:1.4;
+  opacity:0;transform:translateY(6px);transition:opacity var(--transicao),transform var(--transicao);
+}
+.peca:hover .peca__legenda,.peca:focus-visible .peca__legenda{opacity:1;transform:none}
+/* ritmo editorial: estreita, larga · igual, igual · larga, estreita */
+.peca:nth-child(1){grid-column:span 2;aspect-ratio:1/1}
+.peca:nth-child(2){grid-column:span 4;aspect-ratio:4/3}
+.peca:nth-child(3){grid-column:span 3;aspect-ratio:1/1}
+.peca:nth-child(4){grid-column:span 3;aspect-ratio:1/1}
+.peca:nth-child(5){grid-column:span 4;aspect-ratio:4/3}
+.peca:nth-child(6){grid-column:span 2;aspect-ratio:1/1}
+
+/* -------------------------------------------------------------- lightbox */
+.lupa{
+  position:fixed;inset:0;z-index:120;display:none;
+  background:rgba(30,40,34,.94);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  padding:clamp(1rem,4vw,3rem);
+}
+.lupa.aberta{display:grid;grid-template-rows:1fr auto;place-items:center;gap:1.2rem}
+.lupa img{max-width:min(96vw,1000px);max-height:76vh;width:auto;border-radius:var(--curva);background:var(--creme)}
+.lupa__barra{display:flex;align-items:center;gap:1.4rem;color:rgba(241,234,221,.8);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+.lupa__nav{
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(241,234,221,.28);
+  background:transparent;color:var(--creme);cursor:pointer;display:grid;place-items:center;
+  transition:background var(--transicao),border-color var(--transicao);
+}
+.lupa__nav:hover{background:rgba(241,234,221,.12);border-color:rgba(241,234,221,.6)}
+.lupa__fechar{
+  position:absolute;top:clamp(.8rem,2.5vw,1.8rem);right:clamp(.8rem,2.5vw,1.8rem);
+  width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,234,221,.28);
+  background:transparent;color:var(--creme);cursor:pointer;font-size:1.2rem;line-height:1;
+}
+.lupa__fechar:hover{background:rgba(241,234,221,.12)}
+body.lupa-aberta{overflow:hidden}
+
+/* ----------------------------------------------------------- localização */
+.local__grade{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,4vw,4.5rem);align-items:start}
+.dados{border-top:1px solid var(--linha-clara);margin-top:2.5rem}
+.dados__item{
+  display:grid;grid-template-columns:minmax(120px,.5fr) 1fr;gap:1rem;
+  padding-block:1.15rem;border-bottom:1px solid var(--linha-clara);align-items:baseline;
+}
+.dados__rotulo{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(241,234,221,.5)}
+.dados__valor{color:rgba(241,234,221,.92);font-size:.96em;line-height:1.6}
+.dados__valor a{text-decoration:none;border-bottom:1px solid rgba(241,234,221,.3);padding-bottom:1px;transition:border-color var(--transicao)}
+.dados__valor a:hover{border-bottom-color:var(--creme)}
+.dados__valor .linha-extra{display:block;color:rgba(241,234,221,.62)}
+.mapa{
+  border-radius:var(--curva-g);overflow:hidden;border:1px solid var(--linha-clara);
+  aspect-ratio:4/3.4;background:rgba(241,234,221,.05);
+}
+.mapa iframe{width:100%;height:100%;border:0;filter:grayscale(.32) contrast(.95) sepia(.12)}
+
+/* ---------------------------------------------------------- chamada final */
+.final{background:var(--creme-alto);text-align:center;overflow:hidden}
+.final .env{display:flex;flex-direction:column;align-items:center}
+.final .etiqueta{justify-content:center}
+.final .corpo{margin-inline:auto;text-align:center}
+.final .acoes{justify-content:center}
+.final__hex{
+  width:22px;height:24px;color:var(--terra);margin-bottom:1.8rem;
+}
+
+/* ---------------------------------------------------------------- rodapé */
+.rodape{background:var(--verde-fundo);color:rgba(241,234,221,.72);padding-block:clamp(3.5rem,6vw,5rem) 2rem;position:relative;overflow:hidden}
+.rodape__grade{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3.5rem)}
+.rodape img.logo{height:44px;width:auto;margin-bottom:1.4rem}
+.rodape p{font-size:.88rem;line-height:1.75;max-width:34ch;margin:0}
+.rodape h4{
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(241,234,221,.45);
+  margin:0 0 1.05rem;font-weight:500;
+}
+.rodape li{margin-bottom:.55rem;font-size:.88rem}
+.rodape a{text-decoration:none;transition:color var(--transicao)}
+.rodape a:hover{color:var(--creme)}
+.rodape__base{
+  margin-top:clamp(2.8rem,5vw,4rem);padding-top:1.5rem;border-top:1px solid var(--linha-clara);
+  display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;
+  font-size:.72rem;letter-spacing:.05em;color:rgba(241,234,221,.45);
+}
+.social{display:flex;gap:.6rem;margin-top:1.5rem}
+.social a{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--linha-clara);
+  display:grid;place-items:center;transition:background var(--transicao),border-color var(--transicao);
+}
+.social a:hover{background:rgba(241,234,221,.1);border-color:rgba(241,234,221,.45)}
+.social svg{width:17px;height:17px}
+
+/* ------------------------------------------------------- botão flutuante */
+.zap{
+  position:fixed;right:clamp(1rem,2.5vw,1.8rem);bottom:clamp(1rem,2.5vw,1.8rem);z-index:70;
+  width:56px;height:56px;border-radius:50%;
+  background:#25913F;color:#fff;display:grid;place-items:center;text-decoration:none;
+  box-shadow:0 14px 30px -12px rgba(20,80,36,.75);
+  opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);
+  transition:opacity 320ms ease,transform 320ms ease,visibility 320ms,box-shadow var(--transicao);
+}
+.zap.visivel{opacity:1;visibility:visible;transform:none}
+.zap:hover{box-shadow:0 18px 38px -12px rgba(20,80,36,.85);transform:translateY(-3px)}
+.zap svg{width:28px;height:28px}
+body.menu-aberto .zap,body.lupa-aberta .zap{opacity:0;visibility:hidden}
+
+/* ------------------------------------------------------------- animações */
+.revela{opacity:0;transform:translateY(20px);transition:opacity 900ms cubic-bezier(.22,.61,.36,1),transform 900ms cubic-bezier(.22,.61,.36,1)}
+.revela.dentro{opacity:1;transform:none}
+
+/* -------------------------------------------------------------- responsivo */
+@media (max-width:1080px){
+  .nav{gap:1.4rem}
+  .nav a{font-size:.68rem;letter-spacing:.12em}
+}
+@media (max-width:900px){
+  :root{--cabecalho:72px;--logo-alt:38px}
+  .cabecalho.fixo{height:calc(var(--cabecalho) - 10px)}
+  .cabecalho.fixo .marca img{height:calc(var(--logo-alt) - 5px)}
+  .nav,.cabecalho .btn{display:none}
+  .hamburguer{display:flex}
+  body.menu-aberto{overflow:hidden}
+  .hero{min-height:auto;padding-block:calc(var(--cabecalho) + 3rem) 6.5rem}
+  .hero .env{grid-template-columns:1fr;gap:2.8rem}
+  .hero__texto{max-width:none}
+  .hero__mesa{max-width:420px;margin-inline:auto;width:100%}
+  .duo,.local__grade,.ambiente__topo{grid-template-columns:1fr}
+  .duo__midia{order:-1;max-width:520px}
+  .brunch .duo__midia{order:-1}
+  .duo__nota{right:auto;left:6%;bottom:-24px;max-width:230px}
+  .trio{grid-template-columns:1fr;gap:2.8rem}
+  .bloco{display:grid;grid-template-columns:132px 1fr;gap:1.5rem;align-items:center}
+  .bloco__midia{margin-bottom:0}
+  .bloco .corpo{max-width:none}
+  .qualidades{grid-template-columns:1fr;gap:1.6rem;margin-top:2.2rem}
+  .galeria__grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+  .peca:nth-child(n){grid-column:span 1;aspect-ratio:1/1}
+  .peca:nth-child(2),.peca:nth-child(5){grid-column:span 2;aspect-ratio:16/10}
+  .ambiente__grade{grid-template-columns:1fr 1fr}
+  .ambiente__grade .moldura:nth-child(3){grid-column:span 2;aspect-ratio:16/9}
+  .rodape__grade{grid-template-columns:1fr 1fr}
+  .rodape__grade > :first-child{grid-column:1/-1}
+  .mapa{aspect-ratio:4/3}
+}
+@media (max-width:560px){
+  .hero__rodape .env{gap:.35rem 1.2rem;font-size:.66rem}
+  .hero__rodape .sep{display:none}
+  .bloco{grid-template-columns:1fr;gap:1.2rem}
+  .bloco__midia{max-width:170px}
+  .brunch__selo{width:86px;height:86px;top:-16px;left:-12px;font-size:.55rem}
+  .duo__nota{position:static;margin-top:1.2rem;max-width:none}
+  .acoes .btn{width:100%}
+  .galeria__grade{grid-template-columns:1fr}
+  .peca:nth-child(n){grid-column:span 1;aspect-ratio:1/1}
+  .ambiente__grade{grid-template-columns:1fr}
+  .ambiente__grade .moldura:nth-child(3){grid-column:span 1;aspect-ratio:4/5}
+  .rodape__grade{grid-template-columns:1fr}
+  .dados__item{grid-template-columns:1fr;gap:.25rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html:focus-within{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;scroll-behavior:auto !important;
+  }
+  .revela{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ============================================================ CABEÇALHO -->
+<header class="cabecalho" id="cabecalho">
+  <div class="env">
+    <a class="marca" href="#inicio" aria-label="Favo Restaurante e Café, ir para o início">
+      <img data-favo-src="marca.logoEscura" alt="Favo Restaurante e Café" width="75" height="46">
+    </a>
+    <nav class="nav" id="nav-desktop" aria-label="Navegação principal"></nav>
+    <a class="btn btn--terra" data-favo-zap>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-4.5 4.1c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.62 0 1.55 1.13 3.04 1.28 3.25.16.21 2.19 3.34 5.3 4.55.74.28 1.32.45 1.77.58.74.24 1.42.2 1.95.12.6-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37-.32-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.15-.21.32-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.56-.94-.83-1.57-1.86-1.75-2.18-.19-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.11-.21.06-.4-.02-.55-.08-.16-.7-1.7-.97-2.32-.25-.6-.5-.52-.7-.53z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <button class="hamburguer" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-movel">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========================================================== MENU MOBILE -->
+<div class="menu-movel" id="menu-movel" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <nav id="nav-mobile" aria-label="Navegação em dispositivos móveis"></nav>
+  <a class="btn btn--terra" data-favo-zap>
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-4.5 4.1c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.62 0 1.55 1.13 3.04 1.28 3.25.16.21 2.19 3.34 5.3 4.55.74.28 1.32.45 1.77.58.74.24 1.42.2 1.95.12.6-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37-.32-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.15-.21.32-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.56-.94-.83-1.57-1.86-1.75-2.18-.19-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.11-.21.06-.4-.02-.55-.08-.16-.7-1.7-.97-2.32-.25-.6-.5-.52-.7-.53z"/></svg>
+    <span>Falar pelo WhatsApp</span>
+  </a>
+  <div class="rodape-menu">
+    <span data-favo="local.logradouro"></span><br>
+    <span data-favo="horarioResumo"></span><br>
+    <a data-favo-instagram data-favo="contato.instagramUsuario"></a>
+  </div>
+</div>
+
+<main id="conteudo">
+
+  <!-- ================================================================ HERO -->
+  <section class="hero" id="inicio">
+    <div class="favo-fundo favo-fundo--suave" aria-hidden="true"></div>
+    <div class="env">
+      <div class="hero__texto">
+        <img class="hero__logo" data-favo-src="marca.logoVerde" alt="" aria-hidden="true" width="206" height="126">
+        <p class="etiqueta" data-favo="hero.etiqueta"></p>
+        <h1 class="display d1">
+          <span data-favo="hero.titulo"></span> <em class="italico" data-favo="hero.tituloDestaque"></em>
+        </h1>
+        <p class="corpo corpo--grande" data-favo="hero.texto"></p>
+        <div class="acoes">
+          <a class="btn btn--cheio" href="#sobre" data-favo="hero.botaoPrimario"></a>
+          <a class="btn btn--linha" data-favo-zap data-favo="hero.botaoSecundario"></a>
+        </div>
+      </div>
+
+      <div class="hero__mesa" aria-hidden="false">
+        <div class="hero__aro" aria-hidden="true"></div>
+        <figure class="hero__prato-a">
+          <picture>
+            <source data-favo-srcset="hero.imagemPrincipal" type="image/webp">
+            <img data-favo-img="hero.imagemPrincipal" data-favo-alt="hero.imagemPrincipalAlt" width="600" height="600" fetchpriority="high" decoding="async">
+          </picture>
+        </figure>
+        <figure class="hero__prato-b">
+          <picture>
+            <source data-favo-srcset="hero.imagemSecundaria" type="image/webp">
+            <img data-favo-img="hero.imagemSecundaria" data-favo-alt="hero.imagemSecundariaAlt" width="600" height="600" decoding="async">
+          </picture>
+        </figure>
+      </div>
+    </div>
+
+    <div class="hero__rodape">
+      <div class="env" id="hero-rodape"></div>
+    </div>
+  </section>
+
+  <!-- =============================================================== SOBRE -->
+  <section class="secao" id="sobre">
+    <div class="env duo">
+      <div class="revela">
+        <p class="etiqueta" data-favo="sobre.etiqueta"></p>
+        <h2 class="display d2" data-favo="sobre.titulo"></h2>
+        <p class="corpo corpo--grande" style="margin-top:1.6rem" data-favo="sobre.texto"></p>
+        <p class="corpo" data-favo="sobre.textoSecundario"></p>
+        <div class="marcadores">
+          <span class="marcador">Restaurante</span>
+          <span class="marcador">Café</span>
+          <span class="marcador">Brunch</span>
+        </div>
+      </div>
+      <div class="duo__midia revela">
+        <picture>
+          <source data-favo-srcset="sobre.imagem" type="image/webp">
+          <img data-favo-img="sobre.imagem" data-favo-alt="sobre.imagemAlt" width="600" height="600" loading="lazy" decoding="async">
+        </picture>
+        <div class="duo__nota"><b>Favo</b> Restaurante e café em Florianópolis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= EXPERIÊNCIA -->
+  <section class="secao secao--escura" id="experiencia">
+    <div class="favo-fundo" aria-hidden="true"></div>
+    <div class="env">
+      <div class="cabeca revela">
+        <p class="etiqueta" data-favo="experiencia.etiqueta"></p>
+        <h2 class="display d2" data-favo="experiencia.titulo"></h2>
+        <p class="corpo corpo--grande" data-favo="experiencia.texto"></p>
+      </div>
+      <div class="trio" id="trio-experiencia"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================== BRUNCH -->
+  <section class="secao brunch" id="brunch">
+    <div class="env duo">
+      <div class="brunch__midia revela">
+        <div class="brunch__selo" aria-hidden="true">Brunch<br>no Favo</div>
+        <picture>
+          <source data-favo-srcset="brunch.imagem" type="image/webp">
+          <img data-favo-img="brunch.imagem" data-favo-alt="brunch.imagemAlt" width="600" height="600" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="revela">
+        <p class="etiqueta" data-favo="brunch.etiqueta"></p>
+        <h2 class="display d2" data-favo="brunch.titulo"></h2>
+        <p class="corpo corpo--grande" style="margin-top:1.6rem" data-favo="brunch.texto"></p>
+        <p class="corpo" data-favo="brunch.textoSecundario"></p>
+        <div class="acoes">
+          <a class="btn btn--cheio" data-favo-zap data-favo="brunch.botao"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ AMBIENTE -->
+  <section class="secao" id="ambiente">
+    <div class="env">
+      <div class="ambiente__topo revela">
+        <div>
+          <p class="etiqueta" data-favo="ambiente.etiqueta"></p>
+          <h2 class="display d2" data-favo="ambiente.titulo"></h2>
+        </div>
+        <p class="corpo corpo--grande" data-favo="ambiente.texto"></p>
+      </div>
+      <div class="ambiente__grade revela" id="grade-ambiente"></div>
+      <div class="qualidades revela" id="qualidades"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================= GALERIA -->
+  <section class="secao galeria" id="galeria">
+    <div class="env">
+      <div class="galeria__topo revela">
+        <div>
+          <p class="etiqueta" data-favo="galeria.etiqueta"></p>
+          <h2 class="display d2" data-favo="galeria.titulo"></h2>
+        </div>
+        <p class="corpo" style="margin:0" data-favo="galeria.texto"></p>
+      </div>
+      <div class="galeria__grade revela" id="grade-galeria"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= LOCALIZAÇÃO -->
+  <section class="secao secao--escura" id="localizacao">
+    <div class="favo-fundo" aria-hidden="true"></div>
+    <div class="env local__grade">
+      <div class="revela">
+        <p class="etiqueta" data-favo="localizacao.etiqueta"></p>
+        <h2 class="display d2" data-favo="localizacao.titulo"></h2>
+        <div class="dados">
+          <div class="dados__item">
+            <span class="dados__rotulo">Endereço</span>
+            <span class="dados__valor">
+              <span data-favo="local.logradouro"></span>
+              <span class="linha-extra"><span data-favo="local.cidadeEstado"></span>, <span data-favo="local.cep"></span></span>
+            </span>
+          </div>
+          <div class="dados__item">
+            <span class="dados__rotulo">Horários</span>
+            <span class="dados__valor" id="dados-horarios"></span>
+          </div>
+          <div class="dados__item">
+            <span class="dados__rotulo">WhatsApp</span>
+            <span class="dados__valor"><a data-favo-zap data-favo="contato.whatsappExibicao"></a></span>
+          </div>
+          <div class="dados__item">
+            <span class="dados__rotulo">Instagram</span>
+            <span class="dados__valor"><a data-favo-instagram data-favo="contato.instagramUsuario"></a></span>
+          </div>
+        </div>
+        <div class="acoes">
+          <a class="btn btn--claro" data-favo-rota target="_blank" rel="noopener" data-favo="localizacao.botaoRota"></a>
+          <a class="btn btn--linha" data-favo-zap>Falar pelo WhatsApp</a>
+        </div>
+      </div>
+      <div class="mapa revela" id="mapa"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================= CHAMADA FINAL -->
+  <section class="secao final" id="visite">
+    <div class="favo-fundo" aria-hidden="true"></div>
+    <div class="env">
+      <svg class="final__hex" viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M11 1 20.5 6.5v11L11 23 1.5 17.5v-11z"/></svg>
+      <h2 class="display d2 revela" data-favo="chamadaFinal.titulo"></h2>
+      <p class="corpo corpo--grande revela" style="margin-top:1.4rem" data-favo="chamadaFinal.texto"></p>
+      <div class="acoes revela">
+        <a class="btn btn--terra" data-favo-zap data-favo="chamadaFinal.botaoPrimario"></a>
+        <a class="btn btn--linha" href="#localizacao" data-favo="chamadaFinal.botaoSecundario"></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================================================================ RODAPÉ -->
+<footer class="rodape">
+  <div class="favo-fundo" aria-hidden="true"></div>
+  <div class="env" style="position:relative;z-index:1">
+    <div class="rodape__grade">
+      <div>
+        <img class="logo" data-favo-src="marca.logoClara" alt="Favo Restaurante e Café" width="72" height="44">
+        <p data-favo="rodape.descricao"></p>
+        <div class="social">
+          <a data-favo-instagram target="_blank" rel="noopener" aria-label="Instagram do Favo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a data-favo-zap aria-label="WhatsApp do Favo">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-4.5 4.1c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.62 0 1.55 1.13 3.04 1.28 3.25.16.21 2.19 3.34 5.3 4.55.74.28 1.32.45 1.77.58.74.24 1.42.2 1.95.12.6-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37-.32-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.15-.21.32-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.56-.94-.83-1.57-1.86-1.75-2.18-.19-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.11-.21.06-.4-.02-.55-.08-.16-.7-1.7-.97-2.32-.25-.6-.5-.52-.7-.53z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Visite</h4>
+        <ul>
+          <li data-favo="local.logradouro"></li>
+          <li data-favo="local.cidadeEstado"></li>
+          <li data-favo="local.cep"></li>
+          <li style="margin-top:.9rem"><a data-favo-rota target="_blank" rel="noopener">Como chegar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horários</h4>
+        <ul id="rodape-horarios"></ul>
+      </div>
+      <div>
+        <h4>Navegue</h4>
+        <ul id="rodape-nav"></ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <span>© <span id="ano"></span> <span data-favo="marca.nome"></span>. Todos os direitos reservados.</span>
+      <span><a data-favo-instagram target="_blank" rel="noopener" data-favo="contato.instagramUsuario"></a> · <a data-favo-zap data-favo="contato.whatsappExibicao"></a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================================================== BOTÃO FLUTUANTE -->
+<a class="zap" id="zap-flutuante" data-favo-zap aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-4.5 4.1c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.62 0 1.55 1.13 3.04 1.28 3.25.16.21 2.19 3.34 5.3 4.55.74.28 1.32.45 1.77.58.74.24 1.42.2 1.95.12.6-.09 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.21-.6-.37-.32-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.15-.21.32-.81 1.02-1 1.23-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.56-.94-.83-1.57-1.86-1.75-2.18-.19-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.19.21-.32.31-.53.11-.21.06-.4-.02-.55-.08-.16-.7-1.7-.97-2.32-.25-.6-.5-.52-.7-.53z"/></svg>
+</a>
+
+<!-- ============================================================== LIGHTBOX -->
+<div class="lupa" id="lupa" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button class="lupa__fechar" id="lupa-fechar" aria-label="Fechar imagem ampliada">&#10005;</button>
+  <img id="lupa-img" alt="">
+  <div class="lupa__barra">
+    <button class="lupa__nav" id="lupa-anterior" aria-label="Imagem anterior">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <span id="lupa-legenda"></span>
+    <button class="lupa__nav" id="lupa-proxima" aria-label="Próxima imagem">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<noscript>
+  <div style="padding:2rem;text-align:center;background:#2E4034;color:#F1EADD">
+    <p style="max-width:46ch;margin:0 auto;line-height:1.8">
+      <strong>Favo Restaurante e Café</strong><br>
+      R. Des. Pedro Silva, 3078, Florianópolis, Santa Catarina, 88080-700<br>
+      Segunda a sexta, 9h às 20h · Fins de semana e feriados, 8h às 20h<br>
+      WhatsApp (48) 98457-6220 · Instagram @favofloripa
+    </p>
+  </div>
+</noscript>
+
+<script src="assets/dados.js"></script>
+<script>
+(function(){
+  "use strict";
+  var D = window.FAVO;
+  if(!D){ console.error("assets/dados.js não foi carregado."); return; }
+
+  /* ------------------------------------------------------------ utilidades */
+  function ler(caminho){
+    return caminho.split(".").reduce(function(o,k){ return (o||{})[k]; }, D);
+  }
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(txt != null) n.textContent = txt;
+    return n;
+  }
+  function linkZap(){
+    var c = D.contato;
+    return "https://wa.me/" + c.whatsappNumero + "?text=" + encodeURIComponent(c.whatsappMensagem || "");
+  }
+  function linkRota(){
+    if(D.local.linkPersonalizado) return D.local.linkPersonalizado;
+    return "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(D.local.buscaMaps);
+  }
+  function imagem(base, alt, opcoes){
+    opcoes = opcoes || {};
+    var pic = document.createElement("picture");
+    var src = document.createElement("source");
+    src.type = "image/webp";
+    src.srcset = base + ".webp";
+    var img = document.createElement("img");
+    img.src = base + ".jpg";
+    img.alt = alt || "";
+    img.width = 600; img.height = 600;
+    img.decoding = "async";
+    if(opcoes.lazy !== false) img.loading = "lazy";
+    pic.appendChild(src); pic.appendChild(img);
+    return { pic: pic, img: img };
+  }
+
+  /* ------------------------------------------------- vínculo com os dados */
+  document.querySelectorAll("[data-favo]").forEach(function(n){
+    var v = ler(n.getAttribute("data-favo"));
+    if(v != null) n.textContent = v;
+  });
+  document.querySelectorAll("[data-favo-src]").forEach(function(n){
+    var v = ler(n.getAttribute("data-favo-src"));
+    if(v) n.src = v;
+  });
+  document.querySelectorAll("[data-favo-img]").forEach(function(n){
+    var base = ler(n.getAttribute("data-favo-img"));
+    if(base) n.src = base + ".jpg";
+    var a = n.getAttribute("data-favo-alt");
+    if(a) n.alt = ler(a) || "";
+  });
+  document.querySelectorAll("[data-favo-srcset]").forEach(function(n){
+    var base = ler(n.getAttribute("data-favo-srcset"));
+    if(base) n.srcset = base + ".webp";
+  });
+  document.querySelectorAll("[data-favo-zap]").forEach(function(n){
+    n.href = linkZap(); n.target = "_blank"; n.rel = "noopener";
+  });
+  document.querySelectorAll("[data-favo-instagram]").forEach(function(n){
+    n.href = D.contato.instagramUrl; n.target = "_blank"; n.rel = "noopener";
+  });
+  document.querySelectorAll("[data-favo-rota]").forEach(function(n){
+    n.href = linkRota();
+  });
+
+  /* ------------------------------------------------------------ navegação */
+  var navD = document.getElementById("nav-desktop");
+  var navM = document.getElementById("nav-mobile");
+  var rodapeNav = document.getElementById("rodape-nav");
+  D.navegacao.forEach(function(item, i){
+    var a = el("a", null, item.rotulo);
+    a.href = "#" + item.alvo;
+    navD.appendChild(a);
+
+    var b = el("a");
+    b.href = "#" + item.alvo;
+    b.appendChild(el("span", null, String(i+1).padStart(2,"0")));
+    b.appendChild(document.createTextNode(item.rotulo));
+    navM.appendChild(b);
+
+    var li = el("li");
+    var c = el("a", null, item.rotulo);
+    c.href = "#" + item.alvo;
+    li.appendChild(c);
+    rodapeNav.appendChild(li);
+  });
+
+  /* ------------------------------------------------------------- horários */
+  var dh = document.getElementById("dados-horarios");
+  var rh = document.getElementById("rodape-horarios");
+  D.horarios.forEach(function(h, i){
+    var s = el("span", i ? "linha-extra" : null, h.dias + ", " + h.horas);
+    dh.appendChild(s);
+    var li = el("li", null, h.dias);
+    li.appendChild(el("br"));
+    li.appendChild(document.createTextNode(h.horas));
+    li.style.marginBottom = ".9rem";
+    rh.appendChild(li);
+  });
+
+  /* ---------------------------------------------- faixa de apoio do hero */
+  var faixa = document.getElementById("hero-rodape");
+  D.horarios.forEach(function(h){
+    var s = el("span");
+    s.appendChild(el("strong", null, h.dias));
+    s.appendChild(document.createTextNode(" " + h.horas));
+    faixa.appendChild(s);
+    faixa.appendChild(el("span", "sep", "·"));
+  });
+  faixa.appendChild(el("span", null, D.local.logradouro));
+
+  /* ---------------------------------------------------------- experiência */
+  var trio = document.getElementById("trio-experiencia");
+  D.experiencia.blocos.forEach(function(b){
+    var art = el("article", "bloco revela");
+    var midia = el("div", "bloco__midia");
+    midia.appendChild(imagem(b.imagem, b.imagemAlt).pic);
+    var corpo = el("div");
+    corpo.appendChild(el("span", "bloco__numero", b.numero));
+    corpo.appendChild(el("h3", "display d3", b.titulo));
+    corpo.appendChild(el("p", "corpo", b.texto));
+    art.appendChild(midia); art.appendChild(corpo);
+    trio.appendChild(art);
+  });
+
+  /* ------------------------------------------------- ambiente e placeholders */
+  var qual = document.getElementById("qualidades");
+  D.ambiente.qualidades.forEach(function(q){
+    var d = el("div", "qualidade");
+    d.appendChild(el("h4", null, q.titulo));
+    d.appendChild(el("p", null, q.texto));
+    qual.appendChild(d);
+  });
+
+  var gradeAmb = document.getElementById("grade-ambiente");
+  D.ambiente.fotos.forEach(function(f){
+    /* Se o arquivo indicado em dados.js existir na pasta assets/fotos,
+       a foto aparece. Se não existir, mostramos um espaço reservado. */
+    var fig = el("figure", "moldura");
+    fig.style.margin = "0";
+    var r = imagem(f.imagem, f.imagemAlt);
+    var leg = el("figcaption", "moldura__legenda", f.legenda);
+    r.img.addEventListener("error", function(){
+      /* PARA PUBLICAR ESTA FOTO: salve o arquivo na pasta do site com o nome
+         indicado em assets/dados.js (ambiente.fotos), por exemplo
+         assets/fotos/ambiente-salao.jpg. O espaço reservado some sozinho. */
+      fig.classList.add("moldura--vazia");
+      fig.innerHTML =
+        '<div class="conteudo">' +
+          '<svg viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true" style="margin:0 auto"><path d="M11 1 20.5 6.5v11L11 23 1.5 17.5v-11z"/></svg>' +
+          '<span>' + f.legenda + '</span>' +
+          '<span style="letter-spacing:.06em;text-transform:none;font-size:.66rem;margin-top:.3rem;color:rgba(46,64,52,.38)">Foto em breve</span>' +
+        '</div>';
+      fig.setAttribute("aria-label", "Espaço reservado para foto: " + f.legenda);
+    });
+    fig.appendChild(r.pic);
+    fig.appendChild(leg);
+    gradeAmb.appendChild(fig);
+  });
+
+  /* -------------------------------------------------------------- galeria */
+  var grade = document.getElementById("grade-galeria");
+  var itens = D.galeria.itens;
+  itens.forEach(function(it, i){
+    var btn = el("button", "peca");
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Ampliar imagem: " + it.legenda);
+    btn.dataset.indice = i;
+    btn.appendChild(imagem(it.imagem, it.alt).pic);
+    btn.appendChild(el("span", "peca__legenda", it.legenda));
+    grade.appendChild(btn);
+  });
+
+  /* ------------------------------------------------------------------ mapa */
+  var mapa = document.getElementById("mapa");
+  var iframe = document.createElement("iframe");
+  iframe.src = "https://www.google.com/maps?q=" + encodeURIComponent(D.local.buscaMaps) + "&hl=pt-BR&z=16&output=embed";
+  iframe.title = "Mapa com a localização do " + D.marca.nome;
+  iframe.loading = "lazy";
+  iframe.referrerPolicy = "no-referrer-when-downgrade";
+  iframe.setAttribute("allowfullscreen", "");
+  mapa.appendChild(iframe);
+
+  /* -------------------------------------------------------------- ano atual */
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------- cabeçalho ao rolar */
+  var cab = document.getElementById("cabecalho");
+  var zap = document.getElementById("zap-flutuante");
+  function aoRolar(){
+    var y = window.scrollY || window.pageYOffset;
+    cab.classList.toggle("fixo", y > 24);
+    zap.classList.toggle("visivel", y > 520);
+  }
+  window.addEventListener("scroll", aoRolar, { passive:true });
+  aoRolar();
+
+  /* ------------------------------------------------------------ menu móvel */
+  var btnMenu = document.getElementById("btn-menu");
+  var menu = document.getElementById("menu-movel");
+  function fecharMenu(){
+    document.body.classList.remove("menu-aberto");
+    btnMenu.setAttribute("aria-expanded", "false");
+    btnMenu.setAttribute("aria-label", "Abrir menu");
+  }
+  btnMenu.addEventListener("click", function(){
+    var aberto = document.body.classList.toggle("menu-aberto");
+    btnMenu.setAttribute("aria-expanded", String(aberto));
+    btnMenu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+    if(aberto) menu.querySelector("a").focus();
+  });
+  menu.addEventListener("click", function(e){
+    if(e.target.closest("a")) fecharMenu();
+  });
+
+  /* ------------------------------------------------------- rolagem suave */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id = a.getAttribute("href").slice(1);
+    if(!id) return;
+    var alvo = document.getElementById(id);
+    if(!alvo) return;
+    e.preventDefault();
+    fecharMenu();
+    var reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var topo = alvo.getBoundingClientRect().top + window.scrollY - (id === "inicio" ? 0 : cab.offsetHeight - 1);
+    window.scrollTo({ top: Math.max(topo, 0), behavior: reduz ? "auto" : "smooth" });
+    try{ history.replaceState(null, "", "#" + id); }catch(err){ /* file:// bloqueia */ }
+  });
+
+  /* ------------------------------------------------------- seção ativa */
+  var secoes = D.navegacao.map(function(n){ return document.getElementById(n.alvo); }).filter(Boolean);
+  var linksNav = Array.prototype.slice.call(navD.querySelectorAll("a"));
+  if("IntersectionObserver" in window){
+    var obsAtivo = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){
+        if(!en.isIntersecting) return;
+        linksNav.forEach(function(l){
+          l.setAttribute("aria-current", l.getAttribute("href") === "#" + en.target.id ? "true" : "false");
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secoes.forEach(function(s){ obsAtivo.observe(s); });
+  }
+
+  /* -------------------------------------------------------- revelações */
+  var reduzMov = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var alvos = document.querySelectorAll(".revela");
+  if(reduzMov || !("IntersectionObserver" in window)){
+    alvos.forEach(function(n){ n.classList.add("dentro"); });
+  } else {
+    var obs = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en, i){
+        if(!en.isIntersecting) return;
+        var atraso = Math.min(i, 4) * 90;
+        setTimeout(function(){ en.target.classList.add("dentro"); }, atraso);
+        obs.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+    alvos.forEach(function(n){ obs.observe(n); });
+  }
+
+  /* ---------------------------------------------------------- lightbox */
+  var lupa = document.getElementById("lupa");
+  var lupaImg = document.getElementById("lupa-img");
+  var lupaLeg = document.getElementById("lupa-legenda");
+  var atual = 0, gatilho = null;
+
+  function mostrar(i){
+    atual = (i + itens.length) % itens.length;
+    var it = itens[atual];
+    lupaImg.src = it.imagem + ".jpg";
+    lupaImg.alt = it.alt;
+    lupaLeg.textContent = it.legenda + "  ·  " + (atual + 1) + " de " + itens.length;
+  }
+  function abrir(i, origem){
+    gatilho = origem || null;
+    mostrar(i);
+    lupa.classList.add("aberta");
+    document.body.classList.add("lupa-aberta");
+    document.getElementById("lupa-fechar").focus();
+  }
+  function fechar(){
+    lupa.classList.remove("aberta");
+    document.body.classList.remove("lupa-aberta");
+    if(gatilho) gatilho.focus();
+  }
+  grade.addEventListener("click", function(e){
+    var b = e.target.closest(".peca");
+    if(b) abrir(parseInt(b.dataset.indice, 10), b);
+  });
+  document.getElementById("lupa-fechar").addEventListener("click", fechar);
+  document.getElementById("lupa-anterior").addEventListener("click", function(){ mostrar(atual - 1); });
+  document.getElementById("lupa-proxima").addEventListener("click", function(){ mostrar(atual + 1); });
+  lupa.addEventListener("click", function(e){
+    if(e.target === lupa) fechar();
+  });
+  document.addEventListener("keydown", function(e){
+    if(document.body.classList.contains("menu-aberto") && e.key === "Escape"){ fecharMenu(); btnMenu.focus(); return; }
+    if(!lupa.classList.contains("aberta")) return;
+    if(e.key === "Escape") fechar();
+    if(e.key === "ArrowLeft") mostrar(atual - 1);
+    if(e.key === "ArrowRight") mostrar(atual + 1);
+    if(e.key === "Tab"){
+      var foco = lupa.querySelectorAll("button");
+      var primeiro = foco[0], ultimo = foco[foco.length - 1];
+      if(e.shiftKey && document.activeElement === primeiro){ e.preventDefault(); ultimo.focus(); }
+      else if(!e.shiftKey && document.activeElement === ultimo){ e.preventDefault(); primeiro.focus(); }
+    }
+  });
+})();
+</script>
+</body>
+</html>
